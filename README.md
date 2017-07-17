@@ -8,13 +8,7 @@ https://example.com/fbmessenger/callback/<id>
 
 
 # Installation in your LHC server
- * Upload the files to your LHC root folder
- * Create an extension in settings/settings.ini.php extension section "fbmessenger"
- <code>Like: 
-  'fbmessenger' => 
-    array (
-		'enable_debug' => false, // Log errors etc in cache/default.log file
-		'ahosting' => false</code>
+ * Upload the files to your /extension folder
  * Install database either by executing doc/install.sql file or executing this command php "cron.php -s site_admin -e fbmessenger -c cron/update_structure"
  * Create facebook page in Modules -> Facebook chat -> Facebook pages -> Register new page
   if you dont see this in Module, check your settings.ini.php
