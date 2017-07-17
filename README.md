@@ -6,12 +6,21 @@ Integration with Facebook messenger API. You will be able to chat with Facebook 
 # Example of callback url
 https://example.com/fbmessenger/callback/<id>
 
-# Installation
- * Make copy of settings.ini.default.php to settings.ini.php and edit file settings.
- * Actvate extension in settings/settings.ini.php extension section "fbmessenger"
+
+# Installation in your LHC server
+ * Upload the files to your LHC root folder
+ * Create an extension in settings/settings.ini.php extension section "fbmessenger"
+ <code>Like: 
+  'fbmessenger' => 
+    array (
+		'enable_debug' => false, // Log errors etc in cache/default.log file
+		'ahosting' => false</code>
  * Install database either by executing doc/install.sql file or executing this command php "cron.php -s site_admin -e fbmessenger -c cron/update_structure"
  * Create facebook page in Modules -> Facebook chat -> Facebook pages -> Register new page
+  if you dont see this in Module, check your settings.ini.php
  * Once page is created you will see what callback url you have to put in facebook webhook. URL is presented in list.
+ 
+# Installation inside Facebook as Developer 
  * You have to configure facebook app according to this tutorial https://developers.facebook.com/docs/messenger-platform/guides/quick-start/
  * Your facebook application has to have "pages_messaging" permission for lhc to be able to extract visitor information and be able to send messages back to lhc. For that you will have to submit application and wait for FB to review it.
  * Before facebook validates your application keep settings "verified" false (in facebook page configuration). After facebook has reviewed your application set "verified" to true. So you will be able to send a messages. During testing, if you add some developer, you can set it to true to see how it works.
